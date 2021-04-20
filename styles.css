@@ -18,18 +18,15 @@ body{
 }
 
 .controls {
-  margin-top : 50px;
   display: flex;
   flex-direction: column; /* 위에서 아래로정렬 */
   align-items: center;
+  margin-top : 50px;
   width: 700px;
-  
 }
 
 .controls .controls__btns{
   margin-bottom: 30px;
-  /* width: 500px; */
-  /* justify-content: space-around; */
 }
 
 .controls__btns button {
@@ -48,10 +45,13 @@ body{
   font-size: 50px;
 }
 
-.controls__btns button:active{
-  transform: scale(0.96);
+.controls__btns button:hover{
+  transform: scale(0.9);
+  box-shadow: 3px 3px 15px;
 }
-
+.controls__btns button:active{
+  transform: scale(0.8);
+}
 .controls .controls__colors{
   display: flex;
   /* width : 800px; */
@@ -67,8 +67,12 @@ body{
   margin: 10px;
 }
 
-.controls__colors .controls__color:active{
+.controls__colors .controls__color:hover{
   transform: scale(0.9);
+  box-shadow: 3px 3px 15px;
+}
+.controls__colors .controls__color:active{
+  transform: scale(0.8);
 }
 
 input[type="range"] { 

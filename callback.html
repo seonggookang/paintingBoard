@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //
+    // 1번째시간
+    // 함수도 값이다.
+    function a(){
+
+    }
+    
+    var a = function(){ //함수가 값이다.
+
+    }
+
+    a={
+      b : function(){ // 키(속성,property) , 값(value) . 객체의 속성 값으로 담겨진 함수를 메소드(method)라고 한다.
+
+      }
+    }
+
+    // 함수는 값이기 때문에 다른 함수의 인자로도 전달이 된다.
+    function cal(func, num){// 첫번째 인자인 함수의 인자로 2번째 인자인 num이 들어감
+      return func(num)
+    }
+
+    function increase(num){
+      return  num+1
+    }
+
+    function decrease(num){
+      return num-1
+    }
+
+    alert(cal(increase, 1));
+    alert(cal(decrease, 1));
+
+
+    //
+    //  2번째 시간 
+    //  함수는 함수의 리턴 값으로도 사용할 수 있다.
+    function cal(mode){
+      var funcs = {
+        'plus' : function(left, right){
+          return left + right
+        },
+        'minus' : function(left, right){
+          return left - right
+        }
+      }
+      return funcs[mode]; // 반환값으로 함수를 사용 // 대괄호가 들어가네? 객체로서의 값을 넣어줄 때는 대괄호를 넣는다.
+    }
+    
+    alert(cal('plus')(2,1)); // 괄호()가 나왔다는건 함수호출을 의미한다.
+    alert(cal('minus')(2,1));
+
+
+    // 배열 값으로 함수를 사용
+    var process = [
+      function(input) { return input + 10;},
+      function(input) { return input * input;},
+      function(input) { return input / 2;}
+    ];
+    var input = 1;
+    for (var i = 0 ; i< process.length; i++){ // forEach로 바꾸는 방법 연구 , 객체를 배열로 바꾸는 방 법 Array.from(blabla)
+      input = process[i](input);
+    }
+    alert(input);
+    // !! 함수는 변수, 매개변수, 리턴값으로 들어갈 수 있다.
+
+console.clear();
+    //
+    //  3번째 시간 
+    //  콜백 함수: 어떤 함수의 인자로 함수를 받는것.
+    
+    // console.log(numbers.sort());// numbers:배열객체 // 점 앞에 뭔가 있으면 그 앞에 있는건 객체이다.// sort는 객체에 속해있기 때문에 메소드라고한다.//sort():내장객체
+    
+
+
+
+
+
+// 콜백함수: 자바스크립트의 함수가 값이기 때문에 가능한
+var numbersGoo = [20,10,9,8,7,6,5,4,3,2,1];
+var sortfunc = function(a,b){// 콜백함수
+  return a-b;
+}
+console.log(numbersGoo.sort(sortfunc)); // sortfunc가 콜백함수다. // sort라는 함수가 실행하는 기본 동장방법을 바꿔버림
+// 오리지널 함수의 동작방법을 함수(값)을 전달함을 통해서 완전 바꿀 수 있다.
+
+
+
+//     function sort(){// 버블 정렬
+//       let temp = 0;
+      
+//       for(let i = 0; i< numbers.length ; i++){
+//         for(let j = 0 ; j < numbers.length-1-i ; j++){
+//           if(numbers[j] > numbers[j+1]){
+//             temp = numbers[j];
+//             numbers[j] = numbers[j+1];
+//             numbers[j+1] = temp;
+//           }
+//       }
+//     }
+//   }
+//   sort();
+//   console.log(numbers);  
+
+//   // 선택 정렬: 가장 작은걸 선택하고 맨 앞으로 치환.
+//   array11 = [3, 6, 1];
+
+//   function selectArrange(){// 버블 정렬.   추후 퀵정렬도 알아보자
+//       let temp = 0;
+//       let min = 100;
+//       let index = 0;
+//       for(let i = 0; i< array11.length ; i++){
+//         for(let j = i ; j < array11.length ; j++){ //이 줄처럼 시작값으로 위에 있는 for문의 i와 맞추고 끝값보다 하나씩 줄여 나간다면?
+//           if(min > array11[j]){
+//             min = array11[j];
+//             index = j;
+//           }
+//           temp = array11[i];
+//           array11[i]  = array11[index];
+//           array11[index] = temp;
+//         }
+//       }
+//       return 0;
+//   }
+// selectArrange();
+// console.log(array11);
+
+
+    
+
+// 4번째 시간
+// 비동기 처리
+// 
+
+// 동기적 : 순서대로 수행했다.
+// 비동기처리 : ajax( asynchronous(비동기) javascript and XML(유용하지않음더이상))
+// 값으롤서의 함수와 콜백
+    
+   
+
+
+
+
+
+  </script>
+</body>
+</html>
